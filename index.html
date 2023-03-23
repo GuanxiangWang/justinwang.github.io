@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Justin Wang</title>
+    <link rel="stylesheet", href="style.css">
+    <script src="https://kit.fontawesome.com/c63c960809.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/justin-logo.png", class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#moreInfo">Resume</a></li>
+                    <li><a href="#moreInfo">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>CS Co-op Student</p>
+                <h1>Hi, I'm <span>Justin Wang</span> <br> at Dalhousie University</h1>
+            </div>
+        </div>
+    </div>
+<!-- ---------------------------------------about--------------------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/headpic.JPG" alt="my picture" class="headpic">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p class="pSize">
+                        Hi there,<br><br>
+
+                        I'm Justin, a self-driven professional with a passion for learning. I've taught myself various programming skills, including JavaScript, React.js and Python, etc. I believe in persistence and dedication, and I'm always eager to take on new challenges. <br><br>
+                        
+                        Aside from work, I'm known for my humor and communication skills. I've led workplace communication and software development groups, and I've worked with clients during the software development process.<br><br>
+                        
+                        In my free time, I create video content for my self-media channel. In two months, I gained 4,000 followers and over 300,000 views on my videos, showing my ability to connect with others and share my passions.<br><br>
+                        
+                        I'm excited to bring my diverse skills and experiences to your team and contribute my talents to your organization. Thanks for considering me.<br><br>
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Software Development</span><ul><li>Android Development</li><li>Java</li><li>Agile Methodology</li><li>Git</li><li>CI/CD</li><li>Test-Driven Development</li><li>UI/UX</li><li>C</li></ul></li>
+                            <li><span>Web Development</span><br><ul><li>HTML/CSS/JavaScript</li><li>Bootstrap</li><li>React.js</li><li>Python</li><li>Django</li><li>MySQL</li><li>PHP</li><li> </li></ul></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Android Application Development</span><br>Developed an Android Application enabling employers to hire people for small tasks and individuals to earn income.</li>
+                            <li><span>Bilibili - Video Content Creator</span><br>Using market analysis, I determined the direction of video creation and self-taught photography and editing skills. By analyzing popular videos, I defined the video style. Within two months, the videos gained over 300,000 views and 4,000 followers.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Dalhousie University</span><br><br>Bachelor of Computer Science, Dalhousie University (2021-2025)<br><br>Co-op Pragram<br><br>Awarded 2022 Comp Sc Dean’s List Awd<br><br>Cumulative GPA: 3.94/4.30 (91.6%) </li>
+                        </ul>
+                    </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------------resume----------------------------- -->
+    <div id="moreInfo">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-3">
+                        <div class="resume">
+                        <h1 class="lastTitle">Resume</h1>
+                        <embed class="resumeFile" src="resume.pdf" width="688" height="988" type="application/pdf">
+                    </div>
+                </div>
+
+                <div class="about-col-4">
+                    <h1 class="lastTitle">Contact</h1>
+                    <p id="contactWays">Guanxiangwang@dal.ca<br><br>
+                    guanxiang2020@gmail.com<br><br>
+                    +1(902)989-7913 (Canada)<br><br>
+                    <a style="color: white " href="https://www.linkedin.com/in/justin-guanxiang-wang-681640242/.com">My Linkedin</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <footer style="background-color: gray; color: white; text-align: center; padding: 10px; margin-top: 188px;">
+            <p>&copy; 2023 Justin (Guanxiang) Wang. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        let tablinks = document.getElementsByClassName("tab-links");
+        let tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        let sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = 0;
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
